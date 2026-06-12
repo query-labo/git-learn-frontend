@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- [+] スマホ表示対応 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- [+] Sassから生成されたCSSを読み込む -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>株式会社クエリ Git & GitHub 勉強会</title>
+  </head>
+  <body>
+    <!-- [+] 背景装飾 -->
+    <div class="background-grid"></div>
+    <div class="background-glow background-glow--green"></div>
+    <div class="background-glow background-glow--blue"></div>
+
+    <!-- [+] ヘッダー -->
+    <header class="header">
+      <a href="#" class="header__logo" aria-label="トップへ戻る">
+        <span class="header__logo-mark">Q</span>
+        <span class="header__logo-text">
+          <span>株式会社クエリ</span>
+          <small>GitHub Study Session</small>
+        </span>
+      </a>
+
+      <button class="header__menu-button" id="menuButton" type="button">
+        MENU
+      </button>
+
+      <nav class="header__nav" id="globalNav">
+        <a href="#about">About</a>
+        <a href="#theme">Theme</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#commands">Commands</a>
+        <a href="#flow">Flow</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- [+] ヒーロー -->
+      <section class="hero" id="about">
+        <div class="hero__content">
+          <p class="hero__label">Query Study Session Vol.02 / Git & GitHub</p>
+
+          <h1 class="hero__title">
+            チーム開発の基礎<br />
+            GitHubで実戦的に学ぶ。
+          </h1>
+
+          <p class="hero__description">
+            第2回勉強会では、Gitの基本操作からGitHubを使ったPull Request、
+            コンフリクト解消、レビューの流れまでを、実務で使う形に近づけて学びます。
+          </p>
+
+          <div class="hero__actions">
+            <a href="#agenda" class="button button--primary"
+              >勉強会内容を見る</a
+            >
+            <a href="#flow" class="button button--secondary">進め方を見る</a>
+          </div>
+          <div class="input-area">
+            <p class="input-area__message-area" id="message-area"></p>
+
+            <input
+              class="input-area__input"
+              type="text"
+              id="inputField"
+              placeholder="コマンドを入力してみよう！"
+            />
+
+            <button type="button" id="test-button">ボタン</button>
+            <button type="button" id="clear-button">クリア</button>
+            <button type="button" id="api-button">API通信</button>
+          </div>
+
+          <div class="hero__meta">
+            <div>
+              <span>Target</span>
+              <strong>Git初心者〜実務前レベル</strong>
+            </div>
+
+            <div>
+              <span>Goal</span>
+              <strong>PR運用を理解する</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- [+] 右側ビジュアル -->
+        <div class="hero__visual">
+          <div class="terminal-card">
+            <div class="terminal-card__header">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="terminal-card__body">
+              <p><span>$</span> git init</p>
+              <p><span>$</span> git add .</p>
+              <p><span>$</span> git commit -m "first commit"</p>
+              <p><span>$</span> git branch feature/study-lp</p>
+              <p><span>$</span> git push origin feature/study-lp</p>
+              <p class="terminal-card__success">✔ Pull Request Ready</p>
+            </div>
+          </div>
+
+          <div class="branch-card">
+            <p class="branch-card__label">Git Flow</p>
+
+            <div class="branch-line">
+              <span class="branch-line__dot"></span>
+              <span class="branch-line__text">main</span>
+            </div>
+
+            <div class="branch-line branch-line--active">
+              <span class="branch-line__dot"></span>
+              <span class="branch-line__text">feature/git-study</span>
+            </div>
+
+            <div class="branch-line">
+              <span class="branch-line__dot"></span>
+              <span class="branch-line__text">pull request</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- [+] 概要 -->
+      <section class="stats">
+        <div class="stats__item">
+          <span>01</span>
+          <strong>Git基礎</strong>
+          <p>add / commit / status / log など、最低限必要な操作を理解する。</p>
+        </div>
+
+        <div class="stats__item">
+          <span>02</span>
+          <strong>GitHub運用</strong>
+          <p>push / Pull Request / review / merge の実務フローを学ぶ。</p>
+        </div>
+
+        <div class="stats__item">
+          <span>03</span>
+          <strong>チーム開発</strong>
+          <p>ブランチ作成、コンフリクト解消、レビュー対応を体験する。</p>
+        </div>
+      </section>
+
+      <!-- [+] テーマ -->
+      <section class="section" id="theme">
+        <div class="section__heading">
+          <p>Theme</p>
+          <h2>この勉強会で押さえること</h2>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-card__icon">Git</div>
+            <h3>変更履歴を管理する</h3>
+            <p>
+              ファイルの変更内容を記録し、いつ・誰が・何を変更したのかを追跡できるようにします。
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">Hub</div>
+            <h3>チームで共有する</h3>
+            <p>
+              GitHubを使ってソースコードを共有し、Pull
+              Requestを通じてレビューとマージを行います。
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">PR</div>
+            <h3>レビュー文化を理解する</h3>
+            <p>
+              自分の変更を説明し、他者のレビューを受けて、品質を高める流れを学びます。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- [+] アジェンダ -->
+      <section class="section section--dark" id="agenda">
+        <div class="section__heading">
+          <p>Agenda</p>
+          <h2>当日の学習メニュー</h2>
+        </div>
+
+        <div class="agenda">
+          <article class="agenda__item">
+            <span>01</span>
+            <div>
+              <h3>Gitとは何か</h3>
+              <p>
+                バージョン管理、ローカルリポジトリ、コミットの考え方を理解します。
+              </p>
+            </div>
+          </article>
+
+          <article class="agenda__item">
+            <span>02</span>
+            <div>
+              <h3>基本コマンド</h3>
+              <p>
+                status / add / commit / log / diff / restore
+                など、よく使う操作を確認します。
+              </p>
+            </div>
+          </article>
+
+          <article class="agenda__item">
+            <span>03</span>
+            <div>
+              <h3>GitHubへpush</h3>
+              <p>
+                ローカルの変更をGitHubへ反映し、リモートリポジトリの役割を理解します。
+              </p>
+            </div>
+          </article>
+
+          <article class="agenda__item">
+            <span>04</span>
+            <div>
+              <h3>ブランチとPull Request</h3>
+              <p>
+                featureブランチを作成し、Pull
+                Requestを作ってレビューの流れを体験します。
+              </p>
+            </div>
+          </article>
+
+          <article class="agenda__item">
+            <span>05</span>
+            <div>
+              <h3>コンフリクト解消</h3>
+              <p>
+                同じファイルを複数人で変更したときの衝突を、実際に解消します。
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- [+] コマンド一覧 -->
+      <section class="section" id="commands">
+        <div class="section__heading">
+          <p>Commands</p>
+          <h2>最低限覚えるGitコマンド</h2>
+        </div>
+
+        <div class="command-grid">
+          <button class="command-card" type="button" data-command="git status">
+            <span>状態確認</span>
+            <code>git status</code>
+          </button>
+
+          <button class="command-card" type="button" data-command="git add .">
+            <span>変更追加</span>
+            <code>git add .</code>
+          </button>
+
+          <button
+            class="command-card"
+            type="button"
+            data-command='git commit -m "message"'
+          >
+            <span>記録</span>
+            <code>git commit -m "message"</code>
+          </button>
+
+          <button
+            class="command-card"
+            type="button"
+            data-command="git push origin main"
+          >
+            <span>反映</span>
+            <code>git push origin main</code>
+          </button>
+        </div>
+
+        <p class="copy-message" id="copyMessage">
+          コマンドカードをクリックするとコピーできます。
+        </p>
+      </section>
+
+      <!-- [+] フロー -->
+      <section class="section section--dark" id="flow">
+        <div class="section__heading">
+          <p>Flow</p>
+          <h2>実務で使う基本フロー</h2>
+        </div>
+
+        <div class="flow">
+          <div class="flow__item">
+            <span>STEP 1</span>
+            <h3>ブランチ作成</h3>
+            <p>mainから作業用ブランチを切り、作業範囲を分離します。</p>
+          </div>
+
+          <div class="flow__item">
+            <span>STEP 2</span>
+            <h3>修正・コミット</h3>
+            <p>変更内容を小さく分けて、意味のある単位でコミットします。</p>
+          </div>
+
+          <div class="flow__item">
+            <span>STEP 3</span>
+            <h3>Push・PR作成</h3>
+            <p>GitHubへpushし、Pull Requestで変更内容を説明します。</p>
+          </div>
+
+          <div class="flow__item">
+            <span>STEP 4</span>
+            <h3>レビュー・マージ</h3>
+            <p>レビューを受け、修正後にmainへ反映します。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- [+] CTA -->
+      <section class="contact">
+        <div class="contact__inner">
+          <p class="contact__label">Entry</p>
+          <h2>Gitを「なんとなく」から「使える」へ。</h2>
+          <p>
+            今回のゴールは、GitHubにpushできるだけではありません。
+            チーム開発で必要なPull
+            Request、レビュー、コンフリクト対応まで理解することです。
+          </p>
+
+          <div class="contact__actions">
+            <a href="#agenda" class="button button--primary"
+              >学習内容を確認する</a
+            >
+            <a href="#" class="button button--secondary" id="entryButton"
+              >参加する</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small
+        >&copy; 2026 株式会社クエリ Git & GitHub Study LP. Practice Page.</small
+      >
+    </footer>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
