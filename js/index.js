@@ -13,7 +13,7 @@ const isNullCheck = (val) => {
 
 testButton.addEventListener("click", () =>{
     if (isNullCheck(inputField.value)) {
-        messageArea.textContent = "入力が空です。コマンドを入力してください。";
+        messageArea.textContent = "入力が空です。コマンドを入力してくださいね。";
     }else{
         messageArea.textContent = `入力されたコマンド: ${inputField.value}`;
     }
