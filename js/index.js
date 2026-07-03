@@ -13,7 +13,7 @@ const isNullCheck = (val) => {
 
 testButton.addEventListener("click", () =>{
     if (isNullCheck(inputField.value)) {
-        messageArea.textContent = "入力が空です。コマンドを入力してくださいね。";
+        messageArea.textContent = "入力が空です。コマンドを入力してくださいね。";  //2026.07.03 query-namiki "ね"を追加
     }else{
         messageArea.textContent = `入力されたコマンド: ${inputField.value}`;
     }
